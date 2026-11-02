@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlockCraft Tetris</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="hud-panel">
+        <div class="brand-wrap">
+          <p class="eyebrow">Voxel Builder</p>
+          <h1>BlockCraft Tetris</h1>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-box">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>Lines</span>
+            <strong id="lineValue">0</strong>
+          </div>
+          <div class="stat-box">
+            <span>Level</span>
+            <strong id="levelValue">1</strong>
+          </div>
+          <div class="stat-box">
+            <span>Speed</span>
+            <strong id="speedValue">1x</strong>
+          </div>
+        </div>
+
+        <div class="goal-panel">
+          <div class="goal-row">
+            <span>House Progress</span>
+            <strong id="goalText">0 / 100</strong>
+          </div>
+          <div class="meter">
+            <div id="goalFill" class="meter-fill"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="restartBtn" type="button">Restart</button>
+          <button id="pauseBtn" type="button">Pause</button>
+        </div>
+
+        <div class="mission-box">
+          <h2>Build Goal</h2>
+          <p id="statusText">Place blocks in all three dimensions. Every voxel helps build your cabin.</p>
+        </div>
+
+        <div class="legend">
+          <h2>Controls</h2>
+          <ul>
+            <li><span>Left / right</span><strong>← → / A D</strong></li>
+            <li><span>Near / far</span><strong>W / S</strong></li>
+            <li><span>Rotate</span><strong>Q / E</strong></li>
+            <li><span>Depth rotate</span><strong>F / G</strong></li>
+            <li><span>Drop</span><strong>↓ / Space</strong></li>
+            <li><span>Pause</span><strong>P</strong></li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="board-panel">
+        <canvas id="gameCanvas" width="960" height="720" aria-label="3D block Tetris game"></canvas>
+        <div class="touch-controls" aria-label="Touch game controls">
+          <button type="button" data-action="left" aria-label="Move left">◀</button>
+          <button type="button" data-action="right" aria-label="Move right">▶</button>
+          <button type="button" data-action="near" aria-label="Move toward">↖</button>
+          <button type="button" data-action="far" aria-label="Move away">↘</button>
+          <button type="button" data-action="rotate-left" aria-label="Rotate left">↶</button>
+          <button type="button" data-action="rotate-right" aria-label="Rotate right">↷</button>
+          <button type="button" data-action="drop" aria-label="Drop one layer">▼</button>
+          <button type="button" data-action="hard-drop" aria-label="Hard drop">⬇</button>
+        </div>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
